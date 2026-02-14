@@ -97,8 +97,16 @@
                     月一贈り物パック
                 </label>
                 <label>
+                    <input type="number" id="monthly-gift">
+                    回購入
+                </label>
+                <label>
                     <input type="checkbox" id="craft">
                     月一製造パック
+                </label>
+                <label>
+                    <input type="number" id="monthly-craft">
+                    回購入
                 </label>
             </div>
         </div>
@@ -175,8 +183,8 @@
 
             let monthly = 0;
             
-            if (gift) monthly += 620;
-            if (craft) monthly += 900;
+            if (gift) monthly += 620 * document.getElementById("monthly-gift").value;
+            if (craft) monthly += 900 *document.getElementById("monthly-craft").value;
             if (event) monthly += 1040;
             if (gouka) monthly += 1000;
             if (sou) monthly += 120;
